@@ -20,8 +20,8 @@
         <% @matches.each do |one_match| %>
         <div class="col-sm-12 match-details-link">
             <div class="row align-middle">
-                    <span class="col-sm-2"><%= one_match.teamAName %></span><span class="col-sm-1">VS</span><span class="col-sm-2"><%= one_match.teamBName %></span>
-                    <span class="col-sm-7 text-sm-right"><%= one_match.competition %> @ <%= one_match.venue %>, <%= one_match.city %> on <%= one_match.matchDate %></span>
+                    <span class="col-sm-3"><%= one_match.teamAName %></span><span class="col-sm-1">VS</span><span class="col-sm-3"><%= one_match.teamBName %></span>
+                    <span class="col-sm-5 text-sm-right">@ <%= one_match.venue %>, <%= one_match.city %> on <%= one_match.matchDate.to_date %></span>
             </div>
         </div>
         <% end %>
