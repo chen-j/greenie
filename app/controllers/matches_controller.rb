@@ -1,7 +1,7 @@
 class MatchesController < ApplicationController
 
     def index
-        @matches = Match.all
+        @matches = Match.order(matchDate: :asc)
         render "matches_home"
     end
 
