@@ -12,15 +12,21 @@ body {
     height: 100vh;
 }
 
-.logo h3 {
+.logo {
+    padding-left: 0px;
+}
+
+.logo a {
     color: #ff6d12 ;
     font-weight: bold;
     font-size: 52px;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 .top-nav {
     margin-top: 2%;
+    padding-right: 0px;
 }
 
 .tagline-bar {
@@ -81,6 +87,7 @@ body {
 footer {
     /*height: 10vh;*/
     background: #022029;
+    margin-top: 2%;
 }
 
 .africa-made {

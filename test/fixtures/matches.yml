@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teamAName: MyString
+  teamBName: MyString
+  teamAScore: 1
+  teamBScore: 1
+  matchStatus: MyString
+  venue: MyString
+  city: MyString
+  firstRef: MyString
+  secondRef: MyString
+  matchDate: 2016-11-30 12:09:44
+  competition: MyString
+
+two:
+  teamAName: MyString
+  teamBName: MyString
+  teamAScore: 1
+  teamBScore: 1
+  matchStatus: MyString
+  venue: MyString
+  city: MyString
+  firstRef: MyString
+  secondRef: MyString
+  matchDate: 2016-11-30 12:09:44
+  competition: MyString
