@@ -1,27 +1,28 @@
 <div class="container">
 
- <header class="row">
-     <div class="logo col-sm-3">
-         <%= link_to "greenie.", root_path %>
-     </div>
+        <header class="row">
+             <div class="logo col-sm-3">
+                 <%= link_to "greenie.", root_path %>
+             </div>
 
-     <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
-             <nav>
-                 <%= link_to "Scorer Login", matches_path, class: "btn btn-outline-success" %>
-                 <%= link_to "Scorer Signup", matches_path, class: "btn btn-outline-success" %>
-             </nav>
-     </div>
-     <hr class="col-sm-12">
- </header>
-<div class="row">
-    <h1 class="col-sm-12 text-sm-center">Upcoming Matches</h1>
-</div>
+             <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                     <nav>
+                         <%= link_to "Scorer Login", matches_path, class: "btn btn-outline-success" %>
+                         <%= link_to "Scorer Signup", matches_path, class: "btn btn-outline-success" %>
+                     </nav>
+             </div>
+        </header>
+
+        <div class="row">
+            <h1 class="col-sm-12 text-sm-center">Upcoming Matches</h1>
+        </div>
 
         <% @matches.each do |one_match| %>
         <div class="col-sm-12 match-details-link">
             <div class="row align-middle">
                     <span class="col-sm-3"><%= one_match.teamAName %></span><span class="col-sm-1">VS</span><span class="col-sm-3"><%= one_match.teamBName %></span>
-                    <span class="col-sm-5 text-sm-right">@ <%= one_match.venue %>, <%= one_match.city %> on <%= one_match.matchDate.to_date %></span>
+                    <span class="col-sm-4">@ <%= one_match.venue %> on <%= one_match.matchDate.to_date %></span>
+                    <span class=col-sm-1><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></span>
             </div>
         </div>
         <% end %>

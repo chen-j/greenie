@@ -1,0 +1,29 @@
+<div class="container">
+
+        <header class="row">
+             <div class="logo col-sm-3">
+                 <%= link_to "greenie.", root_path %>
+             </div>
+
+             <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                     <nav>
+                         <%= link_to "Scorer Login", matches_path, class: "btn btn-outline-success" %>
+                         <%= link_to "Scorer Signup", matches_path, class: "btn btn-outline-success" %>
+                     </nav>
+             </div>
+        </header>
+
+        <div class="row">
+            <div class="match-score col-sm-12 text-sm-center">
+                <span class="team-name col-sm-4 text-sm-right"><%= @match.teamAName %></span>
+                <span class="teamScore col-sm-1"><%= @match.teamAScore %></span>
+                <span class="col-sm-2" style="margin-top: 2%;">VS</span>
+                <span class="teamScore col-sm-1"><%= @match.teamBScore %></span>
+                <span class="team-name col-sm-4 text-sm-left"><%= @match.teamBName %></span>
+            </div>
+
+
+        </div>
+
+
+</div>
