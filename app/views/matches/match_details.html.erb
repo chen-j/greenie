@@ -8,8 +8,8 @@
              <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
                      <nav>
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
-                         <%= link_to "Scorer Login", matches_path, class: "btn btn-outline-success" %>
-                         <%= link_to "Scorer Signup", matches_path, class: "btn btn-outline-success" %>
+                         <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
+                         <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
                      </nav>
              </div>
         </header>
@@ -28,6 +28,18 @@
             <span class="col-sm-4">Competition: <%= @match.competition  %></span>
             <span class="col-sm-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
             <span class="col-sm-4 text-sm-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
+        </div>
+
+        <div class="row match-commentary">
+            <% @match_events.each do |one_event| %>
+                <p class="match-event-comment col-sm-7" >
+                  <span class="event_name col-sm-3"><%= one_event.event_name  %></span>
+                  <span class="event_team col-sm-4 offset-sm-2"><%= one_event.team %></span>
+                  <span class="event_time col sm-3 text-sm-right">3 mins 06 secs</span>
+                  <span class="event_players col-sm-12"><%= one_event.players %></span>
+                </p>
+            <% end  %>
+
         </div>
 
 

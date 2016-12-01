@@ -7,6 +7,10 @@ class MatchesController < ApplicationController
 
     def show
         @match = Match.find(params[:id])
+        @match_events = @match.match_events
+        @new_match_event = MatchEvent.new
         render "match_details"
     end
+
+
 end
