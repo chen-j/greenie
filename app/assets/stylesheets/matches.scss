@@ -24,7 +24,7 @@
 .teamScore {
     font-family: 'Orbitron', sans-serif;
     font-size: 40px;
-    border: black solid 2px;
+    border: #022029 solid 2px;
     text-align: center;
     padding: 1%;
     border-radius: 4px;
@@ -33,12 +33,21 @@
 
 .btn-primary {
     color: #ffffff;
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #022029;
+    border-color: #022029;
 }
 
 .btn-primary:hover {
     color: #000;
     background-color: #ffffff;
-    border-color: #000000;
+    border-color: #0220290;
+}
+
+.match-info {
+    padding: 1%;
+    background: #022029;
+    color: white;
+    margin-top: 2%;
+    border-radius: 5px;
+    font-weight: bold;
 }

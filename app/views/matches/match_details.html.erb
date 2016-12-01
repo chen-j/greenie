@@ -7,6 +7,7 @@
 
              <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
                      <nav>
+                         <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
                          <%= link_to "Scorer Login", matches_path, class: "btn btn-outline-success" %>
                          <%= link_to "Scorer Signup", matches_path, class: "btn btn-outline-success" %>
                      </nav>
@@ -21,8 +22,12 @@
                 <span class="teamScore col-sm-1"><%= @match.teamBScore %></span>
                 <span class="team-name col-sm-4 text-sm-left"><%= @match.teamBName %></span>
             </div>
+        </div>
 
-
+        <div class=" row match-info">
+            <span class="col-sm-4">Competition: <%= @match.competition  %></span>
+            <span class="col-sm-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
+            <span class="col-sm-4 text-sm-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
         </div>
 
 
