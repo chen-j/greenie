@@ -1,3 +1,11 @@
+<% if scorer_session %>
+    <div class="manage-match-menu row">
+        <div class="col-sm-2">
+            <%= link_to "Delete Match", match_path, class: "btn btn-danger", method: :delete %>
+        </div>
+    </div>
+<% end %>
+
 <div class="container">
 
         <header class="row">

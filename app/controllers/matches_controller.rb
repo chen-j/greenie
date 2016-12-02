@@ -30,6 +30,12 @@ class MatchesController < ApplicationController
         redirect_to "/my_matches"
     end
 
+    def destroy
+        authenticate_scorer!
+        Match.find(params[:id]).destroy
+        redirect_to "/my_matches"
+    end
+
 
     private
 
