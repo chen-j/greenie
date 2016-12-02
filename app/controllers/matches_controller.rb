@@ -36,10 +36,17 @@ class MatchesController < ApplicationController
         redirect_to "/my_matches"
     end
 
+    def update
+        authenticate_scorer!
+        @match = Match.find(params[:id])
+        @match.update(match_params)
+        redirect_to match_path(@match)
+    end
+
 
     private
 
     def match_params
-        params.require(:match).permit(:teamAName, :teamBName, :venue, :city, :matchDate, :firstRef, :secondRef, :competition)
+        params.require(:match).permit(:teamAName, :teamBName, :venue, :teamAScore, :teamBScore, :city, :matchDate, :firstRef, :secondRef, :competition)
     end
 end

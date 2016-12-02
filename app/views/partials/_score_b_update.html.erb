@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-5">
+        <%= form_for @match do |f| %>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-1">
+                        <div class="text-sm-center score_update_label">
+                            <%= f.label :teamAName, @match.teamAName, class: "col-form-label" %>
+                        </div>
+                        <div>
+                            <%= f.number_field :teamAScore, placeholder: @match.teamAScore, class: "score_update_input form-control" %>
+                        </div>
+                        <%= f.button "Update #{@match.teamAName} Score", class: "btn btn-primary btn-block"%>
+                    </div>
+
+                </div>
+        <% end %>
+    </div>
+
+    <div class="col-sm-2 text-sm-center">
+        <p class="score_update_versus">VS</p>
+    </div>
+
+    <div class="col-sm-5">
+    <%= form_for @match do |f| %>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-1">
+                    <div class="text-sm-center score_update_label">
+                        <%= f.label :teamBName, @match.teamBName, class: "col-form-label" %>
+                    </div>
+                    <div>
+                        <%= f.number_field :teamBScore, placeholder: @match.teamBScore, class: "score_update_input form-control" %>
+                    </div>
+                    <%= f.button "Update #{@match.teamBName} Score", class: "btn btn-primary btn-block"%>
+                </div>
+
+            </div>
+    <% end %>
+    </div>
+
+</div>
