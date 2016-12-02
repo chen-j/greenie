@@ -24,4 +24,16 @@ class MatchesController < ApplicationController
         render "new_match"
     end
 
+    def create
+        authenticate_scorer!
+        @new_match = current_scorer.matches.create(match_params)
+        redirect_to "/my_matches"
+    end
+
+
+    private
+
+    def match_params
+        params.require(:match).permit(:teamAName, :teamBName, :venue, :city, :matchDate, :firstRef, :secondRef, :competition)
+    end
 end
