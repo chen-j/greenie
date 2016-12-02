@@ -4,6 +4,12 @@
             <div class="col-sm-2">
                 <%= link_to "Delete Match", match_path, class: "btn btn-danger", method: :delete %>
             </div>
+            <div class="col-sm-2 offset-sm-6 text-sm-right">
+                <a class="js-start-match-btn btn btn-success" data-toggle="collapse" href="#matchScorerPanel" >Start Scoring</a>
+            </div>
+            <div class="col-sm-2 text-sm-right">
+                <a href="#" class="js-end-match-btn btn btn-warning">End Match</a>
+            </div>
         </div>
     <% end %>
 <% end %>
@@ -20,8 +26,14 @@
              <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
                      <nav>
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
-                         <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
-                         <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
+                         <% if scorer_session %>
+                             <%= link_to "My Matches", my_matches_path, class: "btn btn-outline-success" %>
+                             <%= link_to "Signout", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
+                         <% end %>
+                         <% if scorer_session == nil %>
+                             <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
+                             <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
+                         <% end %>
                      </nav>
              </div>
         </header>
@@ -40,6 +52,12 @@
             <span class="col-sm-4">Competition: <%= @match.competition  %></span>
             <span class="col-sm-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
             <span class="col-sm-4 text-sm-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
+        </div>
+
+        <div class="collapse" id="matchScorerPanel">
+              <div class="row match-scorer-panel">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
         </div>
 
         <div class="row match-commentary">
