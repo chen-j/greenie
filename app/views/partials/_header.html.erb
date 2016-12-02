@@ -7,8 +7,13 @@
 
              <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
                      <nav>
-                         <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
-                         <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
+                         <% if scorer_session %>
+                            <%= link_to "Signout", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
+                            <%= link_to "New Match", new_match_path, class: "btn btn-outline-success" %>
+                         <% else %>
+                             <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
+                             <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
+                         <% end %>
                      </nav>
              </div>
         </header>

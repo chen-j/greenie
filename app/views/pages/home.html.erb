@@ -6,6 +6,9 @@
 
                 <div class="top-nav col-sm-3 offset-sm-6">
                     <div class="row">
+                        <% if scorer_session %>
+                            <%= link_to "MY MATCHES", my_matches_path, class: "col-sm-12 btn btn-outline-success my-matches-btn" %>
+                        <% end %>
                         <%= link_to "TRACK MATCHES", matches_path, class: "col-sm-12 btn btn-outline-success" %>
                     </div>
                     <div class="row">
