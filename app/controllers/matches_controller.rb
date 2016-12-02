@@ -12,5 +12,10 @@ class MatchesController < ApplicationController
         render "match_details"
     end
 
+    def my_matches
+        authenticate_scorer!
+        @matches = Match.where(scorer_id: current_scorer.id)
+        render "my_matches"
+    end
 
 end
