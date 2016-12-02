@@ -1,0 +1,60 @@
+<%= render "partials/header" %>
+<div class="container">
+
+    <%= form_for @new_match do |f| %>
+            <div class="form-group row">
+                    <%= f.label :competition, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :competition, placeholder: "Enter Competition name. i.e Friendly, Crusaders 2016",class: "form-control" %>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :venue, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :venue, placeholder: "Host venue i.e St John's College" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :city, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :city, placeholder: "Host city?" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :matchDate, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.datetime_field :matchDate,  class: "form-control" %>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :teamAName, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :teamAName, placeholder: "Price?" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :teamBName, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :teamBName, placeholder: "Price?" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :firstRef, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :firstRef, placeholder: "A few words about your concert" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :secondRef, class: "col-sm-2 col-form-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :secondRef, placeholder: "A few words about your concert" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <%= f.button class: "btn btn-primary"%>
+                </div>
+            </div>
+        <% end %>
+
+</div>

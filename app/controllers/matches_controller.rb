@@ -18,4 +18,10 @@ class MatchesController < ApplicationController
         render "my_matches"
     end
 
+    def new
+        authenticate_scorer!
+        @new_match = Match.new
+        render "new_match"
+    end
+
 end
