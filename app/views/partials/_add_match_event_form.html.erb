@@ -1,0 +1,39 @@
+<% match_events_arr = ["Goal", "Substitution"] %>
+<% match_teams_arr = [@match.teamAName, @match.teamBName] %>
+
+<%= form_for [@match, @new_match_event] do |f| %>
+        <div class="add-match-event-panel row">
+
+                <div class="form-group row">
+                    <%= f.label :event_name, "Event:", class: "col-sm-4 col-form-label" %>
+                    <div class="col-sm-8">
+                        <%= f.select :event_name, options_for_select(match_events_arr), class: "form-control" %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <%= f.label :team, "Team:",class: "col-sm-4 col-form-label" %>
+                    <div class="col-sm-8">
+                        <%= f.select :team, options_for_select(match_teams_arr), class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <%= f.label :players, "Players:",  class: "col-sm-4 col-form-label" %>
+                    <div class="col-sm-8">
+                        <%= f.text_field :players, class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <%= f.label :comment, "Comment:", class: "col-sm-4 col-form-label" %>
+                    <div class="col-sm-8">
+                        <%= f.text_area :comment, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="form-group col-sm-8 offset-sm-4">
+                    <%= f.button "Update", class: "btn btn-primary"%>
+                </div>
+
+
+        </div>
+<% end %>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     root "pages#index"
     get "/my_matches", to: "matches#my_matches"
 
-    resources "matches"
+    resources "matches" do
+        resources "match_events"
+    end
+
 
 end
