@@ -40,9 +40,8 @@ class MatchesController < ApplicationController
         authenticate_scorer!
         @match = Match.find(params[:id])
         @match.update(match_params)
-        redirect_to match_path(@match)
+        # redirect_to match_path(@match)
     end
-
 
     private
 
