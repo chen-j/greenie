@@ -14,7 +14,7 @@
 
 
 
-<div class="container">
+<div class="container match-body" data-match-id="<%= @match.id %>">
 
         <header class="row">
              <div class="logo col-sm-3">
@@ -48,9 +48,9 @@
                 <div class="row">
                     <div class="match-score col-sm-12 text-sm-center">
                         <span class="team-name col-sm-4 text-sm-right"><%= @match.teamAName %></span>
-                        <span class="teamScore col-sm-1"><%= @match.teamAScore %></span>
+                        <span class="teamScore score1 col-sm-1"><%= @match.teamAScore %></span>
                         <span class="col-sm-2" style="margin-top: 2%;">VS</span>
-                        <span class="teamScore col-sm-1"><%= @match.teamBScore %></span>
+                        <span class="teamScore score2 col-sm-1"><%= @match.teamBScore %></span>
                         <span class="team-name col-sm-4 text-sm-left"><%= @match.teamBName %></span>
                     </div>
                 </div>
