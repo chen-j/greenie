@@ -44,7 +44,7 @@ class MatchesController < ApplicationController
           ActionCable.server.broadcast "match_#{params[:id]}",
             score1: @match.teamAScore,
             score2: @match.teamBScore
-            # head :ok
+            #head :ok
         end
         # redirect_to match_path(@match)
     end
