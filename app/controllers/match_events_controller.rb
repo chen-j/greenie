@@ -1,8 +1,6 @@
 class MatchEventsController < ApplicationController
     def create
         @match = Match.find(params[:match_id])
-        # @new_match_event = @match.match_events.create!(match_event_params)
-        # redirect_to match_path(@match)
         if @new_match_event = @match.match_events.create!(match_event_params)
           ActionCable.server.broadcast "match_#{@new_match_event[:match_id]}",
             event_name: @new_match_event.event_name,

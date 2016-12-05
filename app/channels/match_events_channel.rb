@@ -9,7 +9,4 @@ class MatchEventsChannel < ApplicationCable::Channel
       stop_all_streams
     end
 
-    #   def update
-    #       ActionCable.server.broadcast "matches", message: "It works"
-    #   end
 end

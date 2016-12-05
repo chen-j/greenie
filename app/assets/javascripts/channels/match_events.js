@@ -23,7 +23,4 @@ App.match_events = App.cable.subscriptions.create("MatchEventsChannel", {
     $(".match-comments").append(event_update);
   },
 
-  // update: function() {
-  //   return this.perform('update');
-  // }
 });

@@ -39,14 +39,12 @@ class MatchesController < ApplicationController
     def update
         authenticate_scorer!
         @match = Match.find(params[:id])
-        # @match.update(match_params)
         if @match.update(match_params)
           ActionCable.server.broadcast "match_#{params[:id]}",
             score1: @match.teamAScore,
             score2: @match.teamBScore
             #head :ok
         end
-        # redirect_to match_path(@match)
     end
 
     private
