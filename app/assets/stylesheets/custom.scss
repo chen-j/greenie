@@ -143,12 +143,12 @@ footer {
 }
 
 .match-scorer-panel {
-    color: white;
-    background: #67787d;
+    color: #022029;
+    background: #f5f5f5;
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 0.5%;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 
 .score_update_input {
@@ -170,7 +170,8 @@ footer {
 
 .add-match-event-panel {
     padding: 3%;
-    background: #8a8a8a;
-    border-radius: 3px;
-    margin-left: 2px
+    background: #ffffff;
+    border-radius: 8px;
+    margin-left: 2px;
+    border: #FF9800 solid 1px;
 }
