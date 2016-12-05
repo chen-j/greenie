@@ -20,7 +20,9 @@ App.match_events = App.cable.subscriptions.create("MatchEventsChannel", {
                                 <span class="event_players col-sm-12">  ${data['event_players']} </span>
                                 <span class="col-sm-12">  ${data['comment']} </span>
                         </p>`;
-    $(".match-comments").append(event_update);
+    if (data['event_name'] != undefined) {
+        $(".match-comments").append(event_update);
+    };
   },
 
 });
