@@ -7,6 +7,8 @@ class MatchEventsController < ApplicationController
             team: @new_match_event.team,
             event_players: @new_match_event.players,
             comment: @new_match_event.comment
+        redirect_to "/matches/#{params[:match_id]}?scroll=true"
+
         end
     end
 
