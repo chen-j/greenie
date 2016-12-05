@@ -4,12 +4,13 @@
                     <%= link_to "greenie.", root_path %>
                 </div>
 
-                <div class="top-nav col-sm-3 offset-sm-6">
-                    <div class="row">
+                <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                    <div class="row btn-group">
                         <% if scorer_session %>
-                            <%= link_to "MY MATCHES", my_matches_path, class: "col-sm-12 btn btn-outline-success my-matches-btn" %>
+                            <%= link_to "MY MATCHES", my_matches_path, class: "btn btn-outline-success" %>
+                            <%= link_to "SIGN OUT", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
                         <% end %>
-                        <%= link_to "TRACK MATCHES", matches_path, class: "col-sm-12 btn btn-outline-success" %>
+                        <%= link_to "TRACK MATCHES", matches_path, class: "btn btn-outline-success" %>
                     </div>
                     <div class="row">
                         <!-- <a href="#" class="col-sm-6 btn btn-outline-success">SCORER SIGNUP</a>

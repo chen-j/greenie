@@ -1,13 +1,14 @@
 class MatchesController < ApplicationController
 
     def index
-        @matches = Match.order(matchDate: :asc)
+        @upcoming_matches = Match.where("matchdate >= ?", DateTime.now.to_date)
+        @matches = Match.order(matchdate: :asc)
         render "matches_home"
     end
 
     def show
         @match = Match.find(params[:id])
-        @match_events = @match.match_events
+        @match_events = @match.match_events.reverse
         @new_match_event = MatchEvent.new
         render "match_details"
     end

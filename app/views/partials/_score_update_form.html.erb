@@ -9,15 +9,15 @@
                         <div>
                             <%= f.number_field :teamAScore, placeholder: @match.teamAScore, class: "score_update_input form-control" %>
                         </div>
-                        <%= f.button "Update #{@match.teamAName} Score", class: "btn btn-primary btn-block"%>
+                        <%= f.button "Update Team Score", class: "btn btn-primary btn-block"%>
                     </div>
 
                 </div>
         <% end %>
     </div>
 
-    <div class="col-sm-2 text-sm-center">
-        <p class="score_update_versus">VS</p>
+    <div class="col-sm-2">
+        <p class="score_update_versus text-sm-center">VS</p>
     </div>
 
     <div class="col-sm-5">
@@ -30,7 +30,7 @@
                     <div>
                         <%= f.number_field :teamBScore, placeholder: @match.teamBScore, class: "score_update_input form-control" %>
                     </div>
-                    <%= f.button "Update #{@match.teamBName} Score", class: "btn btn-primary btn-block"%>
+                    <%= f.button "Update Team Score", class: "btn btn-primary btn-block"%>
                 </div>
 
             </div>

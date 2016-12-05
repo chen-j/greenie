@@ -1,10 +1,11 @@
 <div class="match-comments">
     <% @match_events.each do |one_event| %>
-        <p class="match-event-comment col-sm-7" >
-          <span class="event_name col-sm-3"><%= one_event.event_name  %></span>
-          <span class="event_team col-sm-4 offset-sm-2"><%= one_event.team %></span>
-          <span class="event_players col-sm-12"><%= one_event.players %></span>
-          <span class="col-sm-12"><%= one_event.comment %></span>
-        </p>
+        <div class="match-event-comment col-sm-7" >
+          <p class="event_name col-sm-3"><%= one_event.event_name %></p>
+          <p class="event_name col-sm-4"> <%= one_event.team %></p>
+          <p class="event_time col-sm-3 offset-md-2"><%= one_event.updated_at.localtime.strftime("%H:%M %p")%></p>
+          <p class="event_players col-sm-12"><%= one_event.players %></p>
+          <p class="event_comment col-sm-12"><%= one_event.comment %></p>
+      </div>
     <% end  %>
 </div>

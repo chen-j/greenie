@@ -1,11 +1,11 @@
 <% if scorer_session %>
     <% if current_scorer.id == @match.scorer_id %>
         <div class="manage-match-menu row">
-            <div class="col-xs-2">
+            <div class="col-sm-2">
                 <%= link_to "Delete Match", match_path, class: "btn btn-danger btn-block", method: :delete %>
             </div>
 
-            <div class="col-xs-2 offset-xs-8 text-xs-right">
+            <div class="col-sm-2 offset-sm-8 text-sm-right">
                 <a href="#" class="js-end-match-btn btn btn-warning btn-block">End Match</a>
             </div>
         </div>
@@ -17,12 +17,12 @@
 <div class="container match-body" data-match-id="<%= @match.id %>">
 
         <header class="row">
-             <div class="logo col-xs-3">
+             <div class="logo col-sm-3">
                  <%= link_to "greenie.", root_path %>
              </div>
 
-             <div class="top-nav col-xs-5 offset-xs-4 text-xs-right">
-                     <nav>
+             <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                     <nav class="btn-group">
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
                          <% if scorer_session %>
                              <%= link_to "My Matches", my_matches_path, class: "btn btn-outline-success" %>
@@ -46,32 +46,31 @@
         <% else %>
 
                 <div class="row">
-                    <div class="match-score col-xs-12 text-xs-center">
-                        <span class="team-name col-xs-4 text-xs-right"><%= @match.teamAName %></span>
-                        <span class="teamScore score1 col-xs-1"><%= @match.teamAScore %></span>
-                        <span class="col-xs-2" style="margin-top: 2%;">VS</span>
-                        <span class="teamScore score2 col-xs-1"><%= @match.teamBScore %></span>
-                        <span class="team-name col-xs-4 text-xs-left"><%= @match.teamBName %></span>
+                    <div class="match-score col-sm-12 text-sm-center">
+                        <span class="team-name col-sm-4 text-sm-right"><%= @match.teamAName %></span>
+                        <span class="teamScore score1 col-sm-1"><%= @match.teamAScore %></span>
+                        <span class="col-sm-2" style="margin-top: 2%;">VS</span>
+                        <span class="teamScore score2 col-sm-1"><%= @match.teamBScore %></span>
+                        <span class="team-name col-sm-4 text-sm-left"><%= @match.teamBName %></span>
                     </div>
                 </div>
 
                 <div class=" row match-info">
-                    <span class="col-xs-4">Competition: <%= @match.competition  %></span>
-                    <span class="col-xs-4 text-xs-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
-                    <span class="col-xs-4 text-xs-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
+                    <span class="col-sm-4">Competition: <%= @match.competition  %></span>
+                    <span class="col-sm-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
+                    <span class="col-sm-4 text-sm-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
                 </div>
 
         <% end %>
 
+        <% if scorer_session && current_scorer.id == @match.scorer_id %>
+            <div class="row">
+                <%= render "partials/add_match_event_form" %>
+            </div>
+        <% end %>
 
         <div class="row match-commentary">
             <%= render "partials/match_commentary" %>
-
-            <% if scorer_session && current_scorer.id == @match.scorer_id %>
-                <div class="col-xs-5">
-                    <%= render "partials/add_match_event_form" %>
-                </div>
-            <% end %>
 
         </div>
 

@@ -6,7 +6,7 @@
              </div>
 
              <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
-                     <nav>
+                     <nav class="btn-group">
                          <% if scorer_session %>
                             <%= link_to "Signout", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
                             <%= link_to "New Match", new_match_path, class: "btn btn-outline-success" %>

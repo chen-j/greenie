@@ -127,16 +127,6 @@ footer {
     padding-top: 3%;
 }
 
-.my-matches-btn {
-    color: #022029;
-    background-image: none;
-    background-color: #ff6d12;
-    border-color: #ff6d12;
-    font-weight: bolder;
-    border-width: medium;
-    margin-bottom: 2%;
-}
-
 .manage-match-menu {
     background: black;
     padding: 1%;
@@ -162,9 +152,9 @@ footer {
 }
 
 .score_update_versus {
-    font-size: 100px;
+    font-size: -webkit-xxx-large;
     color: #ff6d12;
-    margin-top: 10%;
+    // margin-top: 10%;
     font-weight: bold;
 }
 
@@ -172,6 +162,28 @@ footer {
     padding: 3%;
     background: #ffffff;
     border-radius: 8px;
-    margin-left: 2px;
     border: #FF9800 solid 1px;
+}
+
+
+html {
+  font-size: 12px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 16px;
+  }
 }

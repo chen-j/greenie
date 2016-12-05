@@ -1,12 +1,12 @@
 <div class="container">
 
         <header class="row">
-             <div class="logo col-xs-3">
+             <div class="logo col-sm-3">
                  <%= link_to "greenie.", root_path %>
              </div>
 
-             <div class="top-nav col-xs-5 offset-xs-4 text-xs-right">
-                     <nav>
+             <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                     <nav class="btn-group">
                          <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
                          <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
                      </nav>
@@ -14,15 +14,15 @@
         </header>
 
         <div class="row">
-            <h1 class="col-xs-12 text-xs-center">Upcoming Matches</h1>
+            <h4 class="col-sm-12">Upcoming Matches</h1>
         </div>
 
-        <% @matches.each do |one_match| %>
-        <div class="col-xs-12 match-details-link">
-            <div class="row align-middle">
-                    <span class="col-xs-3"><%= one_match.teamAName %></span><span class="col-xs-1">VS</span><span class="col-xs-3"><%= one_match.teamBName %></span>
-                    <span class="col-xs-4">@ <%= one_match.venue %> on <%= one_match.matchDate.to_date %></span>
-                    <span class=col-xs-1><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-xs" %></span>
+        <% @upcoming_matches.each do |one_match| %>
+        <div class="col-sm-8 match-details-link">
+            <div class="row">
+                    <p class="col-sm-2"><%= one_match.teamAName %></p><p class="col-sm-1">VS</p><p class="col-sm-2"><%= one_match.teamBName %></p>
+                    <p class="col-sm-6">@ <%= one_match.venue %> on <%= one_match.matchdate.localtime.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                    <p class="col-sm-1"><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></p>
             </div>
         </div>
         <% end %>
