@@ -8,9 +8,15 @@ class MatchEventsController < ApplicationController
             event_players: @new_match_event.players,
             comment: @new_match_event.comment,
             updated_at: @new_match_event.updated_at.localtime.strftime("%H:%M%p")
-        redirect_to "/matches/#{params[:match_id]}?scroll=true"
-
+        redirect_to "/matches/#{params[:match_id]}"
         end
+    end
+
+    def destroy
+      match = Match.find(params[:match_id])
+      match_event = match.match_events.find(params[:id])
+      match_event.destroy
+      redirect_to "/matches/#{params[:match_id]}"
     end
 
     private

@@ -1,11 +1,14 @@
 <div class="match-comments">
     <% @match_events.each do |one_event| %>
-        <div class="match-event-comment col-sm-7" >
+        <div class="match-event-comment col-sm-7" data-match-event-id="<%= one_event.id %>" >
           <p class="event_name col-sm-3"><%= one_event.event_name %></p>
           <p class="event_name col-sm-4"> <%= one_event.team %></p>
           <p class="event_time col-sm-3 offset-md-2"><%= one_event.updated_at.localtime.strftime("%H:%M %p")%></p>
           <p class="event_players col-sm-12"><%= one_event.players %></p>
           <p class="event_comment col-sm-12"><%= one_event.comment %></p>
+          <% if scorer_session && current_scorer.id == @match.scorer_id  && @match.matchStatus == "LIVE" %>
+              <%= link_to "Delete Event", "/matches/#{@match.id}/match_events/#{one_event.id}", class: "btn btn-danger btn-sm", method: :delete %>
+          <% end %>
       </div>
     <% end  %>
 </div>
