@@ -48,9 +48,18 @@ class MatchesController < ApplicationController
         end
     end
 
+    def update_match_status
+        @match = Match.find(params[:id])
+        if @match.update(match_params)
+          ActionCable.server.broadcast "match_#{params[:id]}",
+            new_match_status: @match.matchStatus
+          redirect_to "/matches/#{params[:id]}"
+        end
+    end
+
     private
 
     def match_params
-        params.require(:match).permit(:teamAName, :teamBName, :venue, :teamAScore, :teamBScore, :city, :matchDate, :firstRef, :secondRef, :competition)
+        params.require(:match).permit(:teamAName, :teamBName, :venue, :teamAScore, :teamBScore, :city, :matchStatus, :matchdate, :firstRef, :secondRef, :competition)
     end
 end
