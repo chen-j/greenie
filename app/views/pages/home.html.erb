@@ -26,21 +26,18 @@
 
 <div class="live-container container">
 
-        <div class="greenie-live col-sm-4">
-                <h3 class="live-greenie"><span class="live-greenie-logo">greenie.</span> <span class="live">LIVE</span></h3>
+        <div class="greenie-live col-sm-5">
+                <h3 class="live-greenie"><p class="live-greenie-logo">LIVE on greenie.</p></h3>
         </div>
-        <div class="live-matches col-sm-6 offset-sm-2">
-                <div class="match-link">
-                    <div class="row">
-                        <p class="col-sm-5">Hellenic Academy</p><p class="col-sm-2">VS</p><p class="col-sm-5">Peterhouse Girls</p>
-                        <p class="col-sm-12">WATERPOLO @ Chisipite Senior School, Harare, ZW</p>
-                    </div>
-                </div><br>
-                <div class="match-link">
-                    <div class="row">
-                        <p class="col-sm-5">St John's College</p><p class="col-sm-2">VS</p><p class="col-sm-5">Falcon College</p>
-                        <p class="col-sm-12">WATERPOLO @ St George's College, Harare, ZW</p>
-                    </div>
-                </div><br>
+        <div class="live-matches col-sm-7">
+            <% @live_matches.each do |live_match| %>
+            <div class="match-details-link">
+                <div class="row home-match-live">
+                        <p class="col-sm-3"><%= live_match.teamAName %></p><p class="col-sm-1">VS</p><p class="col-sm-3"><%= live_match.teamBName %></p>
+                        <p class="col-sm-3">@ <%= live_match.venue %></p>
+                        <p class="col-sm-1"><%= link_to "Track", match_path(live_match.id), class: "btn btn-primary btn-sm" %></p>
+                </div>
+            </div>
+            <% end %>
         </div>
 </div>
