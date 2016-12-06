@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem "rails_12factor", group: :production
 gem "sprockets-es6", require: "sprockets/es6"
 gem 'bootstrap', '~> 4.0.0.alpha5'

@@ -16,7 +16,12 @@ class MatchesController < ApplicationController
     def my_matches
         authenticate_scorer!
         @matches = Match.where(scorer_id: current_scorer.id)
-        render "my_matches"
+        if current_scorer.subscribed == false
+            redirect_to "/subscribers/new"
+        else
+            render "my_matches"
+        end
+
     end
 
     def new
