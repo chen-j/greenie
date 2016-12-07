@@ -2,10 +2,23 @@
     <% if @match.matchStatus == "UPCOMING" %>
       <p class="alert alert-danger">MATCH NOT YET STARTED.</p>
     <% end %>
+    <% if @match.matchStatus == "LIVE" %>
+      <p class="alert alert-success">MATCH IN PROGRESS. FIRST QUARTER</p>
+    <% end %>
+    <% if @match.matchStatus == "2ND" %>
+      <p class="alert alert-success">MATCH IN PROGRESS. SECOND QUARTER</p>
+    <% end %>
+    <% if @match.matchStatus == "3RD" %>
+      <p class="alert alert-success">MATCH IN PROGRESS. THIRD QUARTER</p>
+    <% end %>
+    <% if @match.matchStatus == "4TH" %>
+      <p class="alert alert-success">MATCH IN PROGRESS. FOURTH QUARTER</p>
+    <% end %>
+    <% if @match.matchStatus == "END OF QUARTER" %>
+      <p class="alert alert-success">MATCH IN PROGRESS. QUARTER INTERVAL</p>
+    <% end %>
     <% if @match.matchStatus == "COMPLETED" %>
       <p class="alert alert-warning">MATCH COMPLETED.</p>
     <% end %>
-    <% if @match.matchStatus == "LIVE" %>
-      <p class="alert alert-success">MATCH IN PROGRESS.</p>
-    <% end %>
+
 </div>

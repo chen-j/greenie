@@ -1,10 +1,10 @@
 <div class="main-header row">
             <div class="container">
-                <div class="logo col-sm-3">
+                <div class="logo col-md-3">
                     <%= link_to "greenie.", root_path %>
                 </div>
 
-                <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+                <div class="top-nav col-md-5 offset-md-4 text-md-right">
                     <div class="row btn-group">
                         <% if scorer_session %>
                             <%= link_to "MY MATCHES", my_matches_path, class: "btn btn-outline-success" %>
@@ -13,29 +13,29 @@
                         <%= link_to "TRACK MATCHES", matches_path, class: "btn btn-outline-success" %>
                     </div>
                     <div class="row">
-                        <!-- <a href="#" class="col-sm-6 btn btn-outline-success">SCORER SIGNUP</a>
-                        <a href="#" class="col-sm-6 btn btn-outline-success">SCORER LOGIN</a> -->
+                        <!-- <a href="#" class="col-md-6 btn btn-outline-success">SCORER SIGNUP</a>
+                        <a href="#" class="col-md-6 btn btn-outline-success">SCORER LOGIN</a> -->
                     </div>
                 </div>
             </div>
 </div>
 
 <div class="tagline-bar row">
-    <h2 class="container offset-sm-2">LIVE SCORE TRACKING FOR AMATEUR WATER POLO</h2>
+    <h2 class="container offset-md-2">LIVE SCORE TRACKING FOR AMATEUR WATER POLO</h2>
 </div>
 
 <div class="live-container container">
 
-        <div class="greenie-live col-sm-5">
+        <div class="greenie-live col-md-5">
                 <h3 class="live-greenie"><p class="live-greenie-logo">LIVE on greenie.</p></h3>
         </div>
-        <div class="live-matches col-sm-7">
+        <div class="live-matches col-md-7">
             <% @live_matches.each do |live_match| %>
             <div class="match-details-link">
                 <div class="row home-match-live">
-                        <p class="col-sm-3"><%= live_match.teamAName %></p><p class="col-sm-1">VS</p><p class="col-sm-3"><%= live_match.teamBName %></p>
-                        <p class="col-sm-3">@ <%= live_match.venue %></p>
-                        <p class="col-sm-1"><%= link_to "Track", match_path(live_match.id), class: "btn btn-primary btn-sm" %></p>
+                        <p class="col-md-3"><%= live_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-3"><%= live_match.teamBName %></p>
+                        <p class="col-md-3">@ <%= live_match.venue %></p>
+                        <p class="col-md-1"><%= link_to "Track", match_path(live_match.id), class: "btn btn-primary btn-md" %></p>
                 </div>
             </div>
             <% end %>

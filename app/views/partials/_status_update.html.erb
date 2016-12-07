@@ -1,5 +1,5 @@
 <div class="row">
-    <% match_status_arr = ["","LIVE", "COMPLETED",] %>
+    <% match_status_arr = ["UPCOMING","LIVE","2ND","3RD","4TH","END OF QUARTER", "COMPLETED",] %>
 
     <%= form_for  @match, :url => { :action => :update_match_status } do |f| %>
             <div class="form-group">
