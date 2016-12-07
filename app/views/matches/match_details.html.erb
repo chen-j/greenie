@@ -21,7 +21,7 @@
                  <%= link_to "greenie.", root_path %>
              </div>
 
-             <div class="top-nav col-md-5 offset-md-4 text-md-right">
+             <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center">
                      <nav class="btn-group">
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
                          <% if scorer_session %>
@@ -53,19 +53,19 @@
         <% else %>
 
                 <div class="row">
-                    <div class="match-score col-md-12 text-md-center">
-                        <span class="team-name col-md-4 text-md-right"><%= @match.teamAName %></span>
-                        <span class="teamScore score1 col-md-1"><%= @match.teamAScore %></span>
-                        <span class="col-md-2" style="margin-top: 2%;">VS</span>
-                        <span class="teamScore score2 col-md-1"><%= @match.teamBScore %></span>
-                        <span class="team-name col-md-4 text-md-left"><%= @match.teamBName %></span>
+                    <div class="match-score col-md-12 text-sm-center">
+                        <p class="team-name col-md-4 text-sm-center"><%= @match.teamAName %></p>
+                        <p class="teamScore score1 col-md-1 text-sm-center"><%= @match.teamAScore %></p>
+                        <p class="col-md-2 text-md-center" style="margin-top: 2%;">VS</p>
+                        <p class="teamScore score2 col-md-1 text-sm-center"><%= @match.teamBScore %></p>
+                        <p class="team-name col-md-4 text-sm-center"><%= @match.teamBName %></p>
                     </div>
                 </div>
 
                 <div class=" row match-info">
-                    <span class="col-md-4">Competition: <%= @match.competition  %></span>
-                    <span class="col-md-4 text-md-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></span>
-                    <span class="col-md-4 text-md-right">Venue: <%= @match.venue %>, <%= @match.city %></span>
+                    <p class="col-md-4 text-sm-center">Competition: <%= @match.competition  %></p>
+                    <p class="col-md-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></p>
+                    <p class="col-md-4 text-sm-center">Venue: <%= @match.venue %>, <%= @match.city %></p>
                 </div>
 
         <% end %>

@@ -1,11 +1,11 @@
 <div class="container">
 
         <header class="row">
-             <div class="logo col-sm-3">
+             <div class="logo col-md-3 col-sm-12 text-md-left text-sm-center">
                  <%= link_to "greenie.", root_path %>
              </div>
 
-             <div class="top-nav col-sm-5 offset-sm-4 text-sm-right">
+             <div class="top-nav col-md-5 col-sm-12 offset-md-4 text-md-right text-sm-center">
                      <nav class="btn-group">
                          <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
                          <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
@@ -14,22 +14,22 @@
         </header>
 
         <div class="row">
-            <h4 class="col-sm-12">Upcoming Matches</h4>
-            <p class="col-sm-12 alert alert-warning" role="alert"><strong>Note!!! </strong>Match times are listed in your local time</p>
+            <h3 class="col-md-12">Upcoming Matches</h3>
+            <h6 class="col-md-12 alert alert-warning" role="alert"><strong>Note: </strong>Match times are listed in your local time</h6>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-md-8">
             <% @upcoming_matches.each do |one_match| %>
                 <div class="row match-details-link">
-                        <p class="col-sm-2"><%= one_match.teamAName %></p><p class="col-sm-1">VS</p><p class="col-sm-2"><%= one_match.teamBName %></p>
-                        <p class="col-sm-6">@ <%= one_match.venue %> on <%= one_match.matchdate.localtime.strftime("%A, %d %b %Y %l:%M %p") %></p>
-                        <p class="col-sm-1"><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></p>
+                        <p class="col-md-2"><%= one_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-2"><%= one_match.teamBName %></p>
+                        <p class="col-md-6">@ <%= one_match.venue %> on <%= one_match.matchdate.localtime.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                        <p class="col-md-1"><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></p>
                 </div>
             <% end %>
         </div>
 
-        <div class="col-sm-4">
-            
+        <div class="col-md-4">
+
         </div>
 
 </div>
