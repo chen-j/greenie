@@ -44,7 +44,7 @@
           </div>
         <% end %>
 
-        <% if scorer_session && current_scorer.id == @match.scorer_id  && @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER"%>
+        <% if scorer_session && current_scorer.id == @match.scorer_id %>
                 <div id="matchScorerPanel">
                       <div class="row match-scorer-panel">
                           <%= render "partials/score_update_form" %>
@@ -70,7 +70,7 @@
 
         <% end %>
 
-        <% if scorer_session && current_scorer.id == @match.scorer_id && @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
+        <% if scorer_session && current_scorer.id == @match.scorer_id %>
             <div class="row">
                 <%= render "partials/add_match_event_form" %>
             </div>
