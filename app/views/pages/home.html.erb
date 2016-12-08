@@ -6,13 +6,18 @@
                 <%= link_to "greenie.", root_path %>
             </div>
 
-            <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center text-xs-center">
+            <div class="top-nav col-md-8 offset-md-1 text-md-right text-sm-center text-xs-center">
                 <div class="row btn-group">
+                        <%= link_to "Home", root_path, class: "btn btn-success" %>
                     <% if scorer_session %>
-                        <%= link_to "MY MATCHES", my_matches_path, class: "btn btn-success" %>
-                        <%= link_to "SIGN OUT", destroy_scorer_session_path, class: "btn btn-success", method: :delete %>
+                        <%= link_to "My Matches", my_matches_path, class: "btn btn-success" %>
+                        <%= link_to "New Match", new_match_path, class: "btn btn-success" %>
+                        <%= link_to "Sign Out", destroy_scorer_session_path, class: "btn btn-success", method: :delete %>
+                    <% else %>
+                        <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-success" %>
+                        <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-success" %>
                     <% end %>
-                    <%= link_to "TRACK MATCHES", matches_path, class: "btn btn-success" %>
+                        <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
                 </div>
 
             </div>
@@ -29,6 +34,16 @@ $(".main-slider").backstretch([
 
 <div class="tagline-bar row">
     <h2 class="container text-md-center text-xs-center">LIVE SCORE TRACKING FOR SCHOOL SPORTS</h2>
+</div>
+
+<div class="container how-it-works">
+    <div class="col-md-6 text-xs-center">
+        <p>For School Sports Fans</p>
+    </div>
+
+    <div class="col-md-6 text-xs-center">
+        <p>For Schools</p>
+    </div>
 </div>
 
 <% if @live_matches.count > 0 %>
