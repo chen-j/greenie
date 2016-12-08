@@ -12,27 +12,9 @@
 <% end %>
 
 
-
+    <%= render "partials/header" %>
 <div class="container match-body" data-match-id="<%= @match.id %>" data-match-status="<%= @match.matchStatus %>">
-        <header class="row">
-            <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
-                <%= link_to "greenie.", root_path %>
-            </div>
 
-            <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center text-xs-center">
-                <div class="row btn-group">
-                         <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
-                         <% if scorer_session %>
-                             <%= link_to "My Matches", my_matches_path, class: "btn btn-outline-success" %>
-                             <%= link_to "Signout", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
-                         <% end %>
-                         <% if scorer_session == nil %>
-                             <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
-                             <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
-                         <% end %>
-                     </nav>
-             </div>
-        </header>
 
 
         <%= render "partials/match_status" %>
@@ -80,5 +62,10 @@
             <%= render "partials/match_commentary" %>
         </div>
 
+        <script type="text/javascript">stLight.options({publisher: "9873a41c-24e2-4d8e-8726-52542934b9f1", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+            <script>
+            var options={ "publisher": "9873a41c-24e2-4d8e-8726-52542934b9f1", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "whatsapp", "print", "email"]}};
+            var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+            </script>
 
 </div>

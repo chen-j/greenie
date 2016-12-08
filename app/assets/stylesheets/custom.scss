@@ -22,6 +22,7 @@ header {
 
 .main-header {
         background: #022029;
+        margin-bottom: 1rem;
 }
 
 .matches-home {
@@ -30,6 +31,14 @@ header {
 
 .logo {
     padding-left: 0px;
+}
+
+.footer-logo a {
+    color: #ff6d12 ;
+    font-weight: bold;
+    font-size: 42px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 .logo a {
@@ -162,6 +171,12 @@ footer {
     padding-bottom: 1%;
 }
 
+.footer-social {
+    padding-bottom: 0.8%;
+    padding-top: 0.8%;
+    background: #e0e0e0;
+}
+
 .match-link p {
     padding-top: 3%;
 }
@@ -205,6 +220,12 @@ footer {
     border: #FF9800 solid 1px;
 }
 
+.alert-home {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    text-align: center;
+}
 
 html {
   font-size: 12px;

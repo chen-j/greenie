@@ -30,6 +30,7 @@
         <div class="top-nav col-md-8 offset-md-1 text-md-right text-sm-center text-xs-center">
             <div class="row btn-group">
                     <%= link_to "Home", root_path, class: "btn btn-success" %>
+                    <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
                 <% if scorer_session %>
                     <%= link_to "My Matches", my_matches_path, class: "btn btn-success" %>
                     <%= link_to "New Match", new_match_path, class: "btn btn-success" %>
@@ -38,7 +39,7 @@
                     <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-success" %>
                     <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-success" %>
                 <% end %>
-                    <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
+
             </div>
 
         </div>

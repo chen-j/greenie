@@ -8,16 +8,19 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= action_cable_meta_tag %>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=9873a41c-24e2-4d8e-8726-52542934b9f1"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
   </head>
 
   <body>
     <% if notice != nil %>
-        <div class="alert alert-success" role="alert">
+        <div class="alert-home alert-success" role="alert">
           <span class="notice"><%= notice %></span>
         </div>
     <% end %>
     <% if alert != nil %>
-        <div class="alert alert-warning" role="alert">
+        <div class="alert-home alert-warning" role="alert">
           <span class="alert"><%= alert %></span>
         </div>
     <% end %>
