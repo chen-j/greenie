@@ -15,11 +15,11 @@
 
 <div class="container match-body" data-match-id="<%= @match.id %>" data-match-status="<%= @match.matchStatus %>">
         <header class="row">
-             <div class="logo col-md-3">
+             <div class="logo col-md-3 col-sm-12 text-md-left text-sm-center">
                  <%= link_to "greenie.", root_path %>
              </div>
 
-             <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center">
+             <div class="top-nav col-md-5 col-sm-12 offset-md-4 text-md-right text-sm-center">
                      <nav class="btn-group">
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
                          <% if scorer_session %>
@@ -48,7 +48,7 @@
 
                 <div class="row">
                     <div class="match-score col-md-12 text-sm-center">
-                        <p>Water Polo</p>
+                        <p><%= @match.sport %></p>
                         <p class="team-name col-md-4 text-sm-center"><%= @match.teamAName %></p>
                         <p class="teamScore score1 col-md-1 text-sm-center"><%= @match.teamAScore %></p>
                         <p class="col-md-2 text-md-center" style="margin-top: 2%;">VS</p>
@@ -63,9 +63,9 @@
                 </div>
 
                 <div class=" row match-info">
-                    <p class="col-md-4 text-sm-center">Competition: <%= @match.competition  %></p>
-                    <p class="col-md-4 text-sm-center">Umpires: <%= @match.firstRef %> & <%= @match.secondRef %></p>
-                    <p class="col-md-4 text-sm-center">Venue: <%= @match.venue %>, <%= @match.city %></p>
+                    <p class="col-md-4 text-sm-center text-md-left">Competition: <%= @match.competition  %></p>
+                    <p class="col-md-4 text-sm-center text-md-center">Umpires: <%= @match.firstRef %></p>
+                    <p class="col-md-4 text-sm-center text-md-right">Venue: <%= @match.venue %>, <%= @match.city %></p>
                 </div>
 
         <% end %>

@@ -1,4 +1,20 @@
-<% match_events_arr = ["Goal", "Substitution", "Penalty"] %>
+<% if @match.sport = "Water Polo" %>
+    <% match_events_arr = ["Goal","Ejection","Substitution","End of Chukka","Full time","Penalty"] %>
+<% end %>
+<% if @match.sport = "Football" %>
+    <% match_events_arr = ["Goal","Offside","Substitution","Half time","Full time","Penalty","Yellow Card","Red Card"] %>
+<% end %>
+<% if @match.sport = "Rugby" %>
+    <% match_events_arr = ["Try","Conversion","Penalty","Half time","Full time","Substitution","Yellow Card","Red Card" ] %>
+<% end %>
+<% if @match.sport = "Field Hockey" %>
+    <% match_events_arr = ["Goal","Penalty Corner","Substitution","Half time","Full time","Penalty flick", "Green Card","Red Card" ] %>
+<% end %>
+<% if @match.sport = "Basketball" %>
+    <% match_events_arr = ["Basket","Foul","Technical foul","Fouled out","Substitution","End of Quarter","Full time","Free throw"] %>
+<% end %>
+
+
 <% match_teams_arr = [@match.teamAName, @match.teamBName] %>
 
 <%= form_for [@match, @new_match_event] do |f| %>
@@ -7,13 +23,13 @@
                 <div class="form-group row">
                     <%= f.label :event_name, "Event:", class: "col-md-4 col-form-label" %>
                     <div class="col-md-8">
-                        <%= f.select :event_name, options_for_select(match_events_arr), class: "form-control" %>
+                        <%= f.select :event_name, options_for_select(match_events_arr),{}, { :class => 'form-control' }%>
                     </div>
                 </div>
                 <div class="form-group row">
                     <%= f.label :team, "Team:",class: "col-md-4 col-form-label" %>
                     <div class="col-md-8">
-                        <%= f.select :team, options_for_select(match_teams_arr), class: "form-control" %>
+                        <%= f.select :team, options_for_select(match_teams_arr),{}, { :class => 'form-control'} %>
                     </div>
                 </div>
 
@@ -33,7 +49,5 @@
                 <div class="form-group col-md-8 offset-md-4">
                     <%= f.button "Update", class: "btn btn-primary"%>
                 </div>
-
-
         </div>
 <% end %>

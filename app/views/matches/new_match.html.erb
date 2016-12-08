@@ -1,6 +1,6 @@
 <%= render "partials/header" %>
 <div class="container">
-
+<% match_sports_arr = ["Rugby","Water Polo","Field Hockey","Football","Basketball" ] %>
     <%= form_for @new_match do |f| %>
             <div class="form-group row">
                     <%= f.label :competition, "Competition:", class: "col-sm-3 col-form-label" %>
@@ -18,6 +18,12 @@
                     <%= f.label :city, "City:", class: "col-sm-3 col-form-label" %>
                 <div class="col-sm-9">
                     <%= f.text_field :city, placeholder: "Host city? i.e Harare" ,class: "form-control"%>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <%= f.label :sport, "Sport:",class: "col-sm-3 col-form-label" %>
+                <div class="col-sm-9">
+                    <%= f.select :sport, options_for_select(match_sports_arr),{}, { :class => 'form-control' } %>
                 </div>
             </div>
             <div class="form-group row">

@@ -24,7 +24,7 @@ App.match_status = App.cable.subscriptions.create("MatchStatusChannel", {
     };
 
     if (data['new_match_status'] === "LIVE") {
-        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. FIRST QUARTER</p>`
+        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. FIRST PERIOD</p>`
         var clock = $('.clock').FlipClock({clockFace: 'MinuteCounter'});
     };
 
@@ -33,18 +33,23 @@ App.match_status = App.cable.subscriptions.create("MatchStatusChannel", {
         var clock = $('.clock').html("");
     };
 
+    if (data['new_match_status'] === "HALF TIME") {
+        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. HALF TIME</p>`
+        var clock = $('.clock').html("");
+    };
+
     if (data['new_match_status'] === "2ND") {
-        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. SECOND QUARTER</p>`
+        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. SECOND PERIOD</p>`
         var clock = $('.clock').FlipClock({clockFace: 'MinuteCounter'});
     };
 
     if (data['new_match_status'] === "3RD") {
-        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. THIRD QUARTER</p>`
+        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. THIRD PERIOD</p>`
         var clock = $('.clock').FlipClock({clockFace: 'MinuteCounter'});
     };
 
     if (data['new_match_status'] === "4TH") {
-        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. FOURTH QUARTER</p>`
+        var new_match = `<p class="alert alert-success">MATCH IN PROGRESS. FOURTH PERIOD</p>`
         var clock = $('.clock').FlipClock({clockFace: 'MinuteCounter'});
     };
 
