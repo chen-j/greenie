@@ -1,43 +1,54 @@
-<div class="main-header row">
-            <div class="container">
-                <div class="logo col-md-3 text-lg-left text-sm-center">
-                    <%= link_to "greenie.", root_path %>
+
+<div class="main-slider row">
+    <div class="row">
+        <div class="container">
+            <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
+                <%= link_to "greenie.", root_path %>
+            </div>
+
+            <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center text-xs-center">
+                <div class="row btn-group">
+                    <% if scorer_session %>
+                        <%= link_to "MY MATCHES", my_matches_path, class: "btn btn-success" %>
+                        <%= link_to "SIGN OUT", destroy_scorer_session_path, class: "btn btn-success", method: :delete %>
+                    <% end %>
+                    <%= link_to "TRACK MATCHES", matches_path, class: "btn btn-success" %>
                 </div>
 
-                <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center">
-                    <div class="row btn-group">
-                        <% if scorer_session %>
-                            <%= link_to "MY MATCHES", my_matches_path, class: "btn btn-outline-success" %>
-                            <%= link_to "SIGN OUT", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
-                        <% end %>
-                        <%= link_to "TRACK MATCHES", matches_path, class: "btn btn-outline-success" %>
-                    </div>
-                    <div class="row">
-                        <!-- <a href="#" class="col-md-6 btn btn-outline-success">SCORER SIGNUP</a>
-                        <a href="#" class="col-md-6 btn btn-outline-success">SCORER LOGIN</a> -->
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
 </div>
+<script type="text/javascript">
+$(".main-slider").backstretch([
+    "assets/greenie_cover_rugby.jpg",
+    "assets/greenie_cover_wp.jpg",
+    "assets/greenie_cover_hockey.jpg"
+], {duration: 5000, fade: 1250});
+</script>
 
 <div class="tagline-bar row">
-    <h2 class="container offset-md-2">LIVE SCORE TRACKING FOR AMATEUR WATER POLO</h2>
+    <h2 class="container text-md-center text-xs-center">LIVE SCORE TRACKING FOR SCHOOL SPORTS</h2>
 </div>
 
-<div class="live-container container">
+<% if @live_matches.count > 0 %>
+    <div class="live-container container">
 
-        <div class="greenie-live col-md-5">
-                <h3 class="live-greenie"><p class="live-greenie-logo">LIVE on greenie.</p></h3>
-        </div>
-        <div class="live-matches col-md-7">
-            <% @live_matches.each do |live_match| %>
-            <div class="match-details-link-home">
-                <div class="row home-match-live">
-                        <p class="col-md-3"><%= live_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-3"><%= live_match.teamBName %></p>
-                        <p class="col-md-3">@ <%= live_match.venue %></p>
-                        <p class="col-md-1"><%= link_to "Track", match_path(live_match.id), class: "btn btn-primary btn-md" %></p>
-                </div>
+            <div class="greenie-live col-md-5">
+                    <h3 class="live-greenie"><p class="live-greenie-logo">LIVE on greenie.</p></h3>
             </div>
-            <% end %>
-        </div>
-</div>
+
+            <div class="live-matches col-md-7">
+                <% @live_matches.each do |live_match| %>
+                <div class="match-details-link-home">
+                    <div class="row home-match-live">
+                            <p class="col-md-3"><%= live_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-3"><%= live_match.teamBName %></p>
+                            <p class="col-md-3">@ <%= live_match.venue %></p>
+                            <p class="col-md-1"><%= link_to "Track", match_path(live_match.id), class: "btn btn-primary btn-md" %></p>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+
+    </div>
+<% end %>

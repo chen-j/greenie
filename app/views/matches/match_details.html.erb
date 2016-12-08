@@ -15,12 +15,12 @@
 
 <div class="container match-body" data-match-id="<%= @match.id %>" data-match-status="<%= @match.matchStatus %>">
         <header class="row">
-             <div class="logo col-md-3 col-sm-12 text-md-left text-sm-center">
-                 <%= link_to "greenie.", root_path %>
-             </div>
+            <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
+                <%= link_to "greenie.", root_path %>
+            </div>
 
-             <div class="top-nav col-md-5 col-sm-12 offset-md-4 text-md-right text-sm-center">
-                     <nav class="btn-group">
+            <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center text-xs-center">
+                <div class="row btn-group">
                          <%= link_to "All Matches", matches_path, class: "btn btn-outline-success" %>
                          <% if scorer_session %>
                              <%= link_to "My Matches", my_matches_path, class: "btn btn-outline-success" %>

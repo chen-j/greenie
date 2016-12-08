@@ -18,7 +18,8 @@
             <h6 class="col-md-12 alert alert-warning" role="alert"><strong>Note: </strong>Match times are listed in your local time</h6>
         </div>
 
-        <div class="col-md-12">
+<div class="row matches-home">
+        <div class="col-md-9">
             <% @upcoming_matches.each do |one_match| %>
                 <div class="row match-details-link">
                         <p class="col-md-2"><%= one_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-2"><%= one_match.teamBName %></p>
@@ -31,8 +32,9 @@
             <% end %>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
         </div>
+</div>
 
 </div>

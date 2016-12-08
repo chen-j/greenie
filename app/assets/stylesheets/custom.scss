@@ -5,15 +5,23 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.home-header {
+    background-color: #022029;
+}
+
 header {
     border-bottom: #022029 solid 5px;
     margin-bottom: 2%;
 }
 
-.main-header {
-    background: url("greenie_cover.png") no-repeat center;
-    background-size: cover;
+.main-slider {
+    // background: url("greenie_cover.png") no-repeat center;
+    // background-size: cover;
     height: 100vh;
+}
+
+.matches-home {
+    margin-bottom: 2%;
 }
 
 .logo {
@@ -30,7 +38,31 @@ header {
 
 .top-nav {
     margin-top: 2%;
-    padding-right: 0px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #ff6d12;
+    border-color: #ff6d12;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #d86c29;
+    border-color: #d86c29;
+}
+
+.btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #ff6d12;
+    border-color: #ff6d12;
+    background-image: none;
+}
+
+.btn-success:focus, .btn-success.focus {
+    color: #fff;
+    background-color: #ff6d12;
+    border-color: #ff6d12;
 }
 
 .tagline-bar {
@@ -94,9 +126,7 @@ header {
 }
 
 footer {
-    /*height: 10vh;*/
     background: #022029;
-    margin-top: 2%;
 }
 
 .africa-made {
