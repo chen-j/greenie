@@ -13,7 +13,7 @@
             <% @upcoming_matches.each do |one_match| %>
                 <div class="row match-details-link">
                         <p class="col-md-2"><%= one_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-2"><%= one_match.teamBName %></p>
-                        <p class="col-md-4">@ <%= one_match.venue %> on <%= one_match.matchdate.localtime.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                        <p class="col-md-4">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
                     <% if one_match.sport != "" %>
                         <p class="col-md-2 btn btn-success btn-sm"><%= one_match.sport %></p>
                     <% end %>
