@@ -36,11 +36,7 @@
 
 
         <%= render "partials/match_status" %>
-        <% if @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
-          <div class="col-md-4 offset-md-4">
-              <div class="clock"></div>
-          </div>
-        <% end %>
+
 
         <% if scorer_session && current_scorer.id == @match.scorer_id %>
                 <div id="matchScorerPanel">
@@ -52,12 +48,18 @@
 
                 <div class="row">
                     <div class="match-score col-md-12 text-sm-center">
+                        <p>Water Polo</p>
                         <p class="team-name col-md-4 text-sm-center"><%= @match.teamAName %></p>
                         <p class="teamScore score1 col-md-1 text-sm-center"><%= @match.teamAScore %></p>
                         <p class="col-md-2 text-md-center" style="margin-top: 2%;">VS</p>
                         <p class="teamScore score2 col-md-1 text-sm-center"><%= @match.teamBScore %></p>
                         <p class="team-name col-md-4 text-sm-center"><%= @match.teamBName %></p>
                     </div>
+                    <% if @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
+                      <div class="col-md-4 offset-md-4">
+                          <div class="clock"></div>
+                      </div>
+                    <% end %>
                 </div>
 
                 <div class=" row match-info">
