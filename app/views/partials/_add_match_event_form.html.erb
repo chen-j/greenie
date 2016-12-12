@@ -1,16 +1,16 @@
-<% if @match.sport = "Water Polo" %>
+<% if @match.sport == "Water Polo" %>
     <% match_events_arr = ["Goal","Ejection","Substitution","End of Chukka","Full time","Penalty"] %>
 <% end %>
-<% if @match.sport = "Football" %>
+<% if @match.sport == "Football" %>
     <% match_events_arr = ["Goal","Offside","Substitution","Half time","Full time","Penalty","Yellow Card","Red Card"] %>
 <% end %>
-<% if @match.sport = "Rugby" %>
+<% if @match.sport == "Rugby" %>
     <% match_events_arr = ["Try","Conversion","Penalty","Half time","Full time","Substitution","Yellow Card","Red Card" ] %>
 <% end %>
-<% if @match.sport = "Field Hockey" %>
+<% if @match.sport == "Field Hockey" %>
     <% match_events_arr = ["Goal","Penalty Corner","Substitution","Half time","Full time","Penalty flick", "Green Card","Red Card" ] %>
 <% end %>
-<% if @match.sport = "Basketball" %>
+<% if @match.sport == "Basketball" %>
     <% match_events_arr = ["Basket","Foul","Technical foul","Fouled out","Substitution","End of Quarter","Full time","Free throw"] %>
 <% end %>
 

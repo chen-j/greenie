@@ -1,20 +1,20 @@
-<% if @match.sport = "Water Polo" %>
+<% if @match.sport == "Water Polo" %>
     <% match_status_arr = ["UPCOMING","LIVE","2ND","3RD","4TH","END OF QUARTER", "COMPLETED",] %>
 <% end %>
 
-<% if @match.sport = "Basketball" %>
+<% if @match.sport == "Basketball" %>
     <% match_status_arr = ["UPCOMING","LIVE","2ND","3RD","4TH","END OF QUARTER", "COMPLETED",] %>
 <% end %>
 
-<% if @match.sport = "Rugby" %>
+<% if @match.sport == "Rugby" %>
     <% match_status_arr = ["UPCOMING","LIVE","2ND","HALF TIME", "COMPLETED",] %>
 <% end %>
 
-<% if @match.sport = "Football" %>
+<% if @match.sport == "Football" %>
     <% match_status_arr = ["UPCOMING","LIVE","2ND","HALF TIME", "COMPLETED",] %>
 <% end %>
 
-<% if @match.sport = "Field Hockey" %>
+<% if @match.sport == "Field Hockey" %>
     <% match_status_arr = ["UPCOMING","LIVE","2ND","HALF TIME", "COMPLETED",] %>
 <% end %>
 

@@ -7,7 +7,7 @@
             <div class="row align-middle">
                     <span class="col-sm-3"><%= one_match.teamAName %></span><span class="col-sm-1">VS</span><span class="col-sm-3"><%= one_match.teamBName %></span>
                     <span class="col-sm-4">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></span>
-                    <span class=col-sm-1><%= link_to "Manage", match_path(one_match.id), class: "btn btn-primary btn-sm" %></span>
+                    <span class=col-sm-1><%= link_to "Manage", one_match, class: "btn btn-primary btn-sm" %></span>
             </div>
         </div>
     <% end %>
