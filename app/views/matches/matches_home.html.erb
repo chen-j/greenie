@@ -17,7 +17,7 @@
                     <% if one_match.sport != "" %>
                         <p class="col-md-2 btn btn-success btn-sm"><%= one_match.sport %></p>
                     <% end %>
-                        <p class="col-md-1"><%= link_to "Track", one_match, class: "btn btn-primary btn-sm" %></p>
+                        <p class="col-md-1"><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></p>
                 </div>
             <% end %>
         </div>
