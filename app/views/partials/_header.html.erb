@@ -1,47 +1,28 @@
-<!-- <div class="container">
-
-        <header class="row">
-             <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
-                 <%= link_to "greenie.", root_path %>
-             </div>
-
-             <div class="top-nav col-md-5 offset-md-4 text-md-right text-sm-center text-xs-center">
-                     <nav class="btn-group">
-                         <% if scorer_session %>
-                            <%= link_to "Signout", destroy_scorer_session_path, class: "btn btn-outline-success", method: :delete %>
-                            <%= link_to "New Match", new_match_path, class: "btn btn-outline-success" %>
-                         <% else %>
-                             <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-outline-success" %>
-                             <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-outline-success" %>
-                         <% end %>
-                     </nav>
-             </div>
-        </header>
-
-</div> -->
 
 
 <div class="main-header">
     <div class="container">
-        <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
-            <%= link_to "greenie.", root_path %>
-        </div>
+        <div class="row">
+            <div class="logo col-md-3 text-lg-left text-sm-center text-xs-center">
+                <%= link_to "greenie.", root_path %>
+            </div>
 
-        <div class="top-nav col-md-8 offset-md-1 text-md-right text-sm-center text-xs-center">
-            <div class="row btn-group">
-                    <%= link_to "Home", root_path, class: "btn btn-success" %>
-                    <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
-                <% if scorer_session %>
-                    <%= link_to "My Matches", my_matches_path, class: "btn btn-success" %>
-                    <%= link_to "New Match", new_match_path, class: "btn btn-success" %>
-                    <%= link_to "Sign Out", destroy_scorer_session_path, class: "btn btn-success", method: :delete %>
-                <% else %>
-                    <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-success" %>
-                    <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-success" %>
-                <% end %>
-
+            <div class="top-nav col-md-8">
+                <div class="row btn-group">
+                        <%= link_to "Home", root_path, class: "btn btn-success" %>
+                        <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
+                    <% if scorer_session %>
+                        <%= link_to "My Matches", my_matches_path, class: "btn btn-success" %>
+                        <%= link_to "New Match", new_match_path, class: "btn btn-success" %>
+                        <%= link_to "Sign Out", destroy_scorer_session_path, class: "btn btn-success", method: :delete %>
+                    <% else %>
+                        <%= link_to "Scorer Login", new_scorer_session_path, class: "btn btn-success" %>
+                        <%= link_to "Scorer Signup", new_scorer_registration_path, class: "btn btn-success" %>
+                    <% end %>
+                </div>
             </div>
 
         </div>
+
     </div>
 </div>
