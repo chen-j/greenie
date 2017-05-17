@@ -1,11 +1,10 @@
 <% if scorer_session %>
     <% if current_scorer.id == @match.scorer_id %>
         <div class="manage-match-menu container-fluid">
-            <div class="col-md-2">
-                <%= link_to "Delete Match", match_path, class: "btn btn-danger btn-block", method: :delete %>
-            </div>
-            <div class="col-md-4 offset-md-6 text-md-center">
-                <%= render "partials/status_update" %>
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <%= link_to "Delete This Match", match_path, class: "btn btn-danger btn-block", method: :delete %>
+                </div>
             </div>
         </div>
     <% end %>
@@ -16,8 +15,15 @@
 <div class="container match-body" data-match-id="<%= @match.id %>" data-match-status="<%= @match.matchStatus %>">
 
 
+        <% if scorer_session && current_scorer.id == @match.scorer_id %>
+            <div class="row">
+                <%= render "partials/status_update" %>
+            </div>
+        <% end %>
 
-        <%= render "partials/match_status" %>
+        <div class="row mx-auto">
+            <%= render "partials/match_status" %>
+        </div>
 
 
         <% if scorer_session && current_scorer.id == @match.scorer_id %>
@@ -37,11 +43,11 @@
                         <p class="teamScore score2 col-md-1 text-sm-center"><%= @match.teamBScore %></p>
                         <p class="team-name col-md-4 text-sm-center"><%= @match.teamBName %></p>
                     </div>
-                    <% if @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
+                    <!-- <% if @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
                       <div class="col-md-4 offset-md-4">
                           <div class="clock"></div>
                       </div>
-                    <% end %>
+                    <% end %> -->
                 </div>
 
                 <div class=" row match-info">
@@ -52,16 +58,12 @@
 
         <% end %>
 
-        <% if scorer_session && current_scorer.id == @match.scorer_id %>
-            <div class="row">
-                <%= render "partials/add_match_event_form" %>
-            </div>
-        <% end %>
 
-        <div class="row match-commentary">
+
+        <!-- <div class="row match-commentary">
             <%= render "partials/match_commentary" %>
-        </div>
+        </div> -->
 
-        
+
 
 </div>

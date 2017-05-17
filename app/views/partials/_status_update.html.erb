@@ -20,22 +20,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <%= form_for  @match, :url => { :action => :update_match_status }, :html => {:class => "form-inline"} do |f| %>
+    <%= form_for  @match, :url => { :action => :update_match_status }, :html => {:class => "form-inline mx-auto"} do |f| %>
             <div class="form-group">
                         <%= f.select :matchStatus, options_for_select(match_status_arr),{}, { :class => 'form-control' } %>
                         <%= f.button "Update Match State", class: "btn btn-success"%>
             </div>
     <% end %>
-</div>

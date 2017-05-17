@@ -2,29 +2,27 @@
 
 <div class="container">
 
-
         <div class="row">
-            <p></p>
-            <h3 class="col-md-12">Upcoming Matches</h3>
-        </div>
-
-<div class="row matches-home">
-        <div class="col-md-9">
             <% @upcoming_matches.each do |one_match| %>
-                <div class="row match-details-link">
-                        <p class="col-md-2"><%= one_match.teamAName %></p><p class="col-md-1">VS</p><p class="col-md-2"><%= one_match.teamBName %></p>
-                        <p class="col-md-4">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
-                    <% if one_match.sport != "" %>
-                        <p class="col-md-2 btn btn-success btn-sm"><%= one_match.sport %></p>
-                    <% end %>
-                        <p class="col-md-1"><%= link_to "Track", match_path(one_match.id), class: "btn btn-primary btn-sm" %></p>
+                <div class="card col-md-5 mx-auto">
+                    <div class="row">
+                        <p class="mx-auto font-italic"><%= one_match.sport %></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-5 font-weight-bold text-sm-center">
+                            <%= one_match.teamAName %>
+                        </p>
+                        <p class="col-sm-2 text-sm-center">VS</p>
+                        <p class="col-sm-5 font-weight-bold text-sm-center">
+                            <%= one_match.teamBName %>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-8 mx-auto text-sm-center">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                    </div>
+                    <%= link_to "Track Live", match_path(one_match.id), class: "btn btn-primary btn-lg btn-block mb-0" %></p>
                 </div>
             <% end %>
         </div>
-
-        <div class="col-md-3">
-
-        </div>
-</div>
 
 </div>
