@@ -37,11 +37,14 @@
                 <div class="row">
                     <div class="match-score col-md-12 text-sm-center">
                         <p><%= @match.sport %></p>
-                        <p class="team-name col-md-4 text-sm-center"><%= @match.teamAName %></p>
-                        <p class="teamScore score1 col-md-1 text-sm-center"><%= @match.teamAScore %></p>
-                        <p class="col-md-2 text-md-center" style="margin-top: 2%;">VS</p>
-                        <p class="teamScore score2 col-md-1 text-sm-center"><%= @match.teamBScore %></p>
-                        <p class="team-name col-md-4 text-sm-center"><%= @match.teamBName %></p>
+                        <div class="row">
+                            <p class="team-name col-md-4 text-sm-center"><%= @match.teamAName %></p>
+                            <p class="teamScore score1 col-md-1 text-sm-center"><%= @match.teamAScore %></p>
+                            <p class="col-md-2 text-md-center" style="margin-top: 2%;">VS</p>
+                            <p class="teamScore score2 col-md-1 text-sm-center"><%= @match.teamBScore %></p>
+                            <p class="team-name col-md-4 text-sm-center"><%= @match.teamBName %></p>
+                        </div>
+
                     </div>
                     <!-- <% if @match.matchStatus != "COMPLETED" || @match.matchStatus != "UPCOMING" || @match.matchStatus != "END OF QUARTER" %>
                       <div class="col-md-4 offset-md-4">
