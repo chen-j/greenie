@@ -1,7 +1,7 @@
 class MatchesController < ApplicationController
 
     def index
-        @upcoming_matches = Match.where("matchdate >= ?", DateTime.now.to_date..DateTime.end_of_week)
+        @upcoming_matches = Match.where("matchdate >= ?", DateTime.now.to_date..7.days.from_now)
         @matches = Match.order(matchdate: :asc)
         render "matches_home"
     end
