@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root "pages#index"
     get "/my_matches", to: "matches#my_matches"
     get "/results", to: "matches#results"
+    get "/api/results", to: "matches#results_api"
     patch "/match_update/:id", to: "matches#update_match_status"
 
     resources "subscribers"

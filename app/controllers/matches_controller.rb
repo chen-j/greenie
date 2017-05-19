@@ -28,6 +28,11 @@ class MatchesController < ApplicationController
         render "match_results"
     end
 
+    def results_api
+        match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
+        render json: match_results
+    end
+
     def new
         authenticate_scorer!
         @new_match = Match.new
