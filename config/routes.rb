@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root "pages#index"
     get "/my_matches", to: "matches#my_matches"
+    get "/results", to: "matches#results"
     patch "/match_update/:id", to: "matches#update_match_status"
 
     resources "subscribers"

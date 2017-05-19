@@ -2,28 +2,29 @@
 
 <div class="container">
         <div class="row">
-            <h3 class="mx-auto mb-3 font-weight-bold">This Week's Fixtures</h3>
+            <h3 class="mx-auto mb-3 font-weight-bold">Results</h3>
         </div>
 
         <div class="row">
-            <% @upcoming_matches.each do |one_match| %>
+            <% @match_results.each do |one_match| %>
                 <div class="card col-md-5 mx-auto mb-3">
                     <div class="row">
                         <p class="mx-auto font-italic"><%= one_match.sport %></p>
                     </div>
                     <div class="row">
-                        <p class="col-sm-5 font-weight-bold text-sm-center">
+                        <p class="col-sm-4 font-weight-bold text-sm-center">
                             <%= one_match.teamAName %>
                         </p>
+                        <h4 class="col-sm-1 mx-auto font-weight-bold"><%= one_match.teamAScore %></h4>
                         <p class="col-sm-2 text-sm-center">VS</p>
-                        <p class="col-sm-5 font-weight-bold text-sm-center">
-                            <%= one_match.teamBName %>
+                        <h4 class="col-sm-1 mx-auto font-weight-bold"><%= one_match.teamBScore %></h4>
+                        <p class="col-sm-4 font-weight-bold text-sm-center">
+                             <%= one_match.teamBName %>
                         </p>
                     </div>
                     <div class="row">
                         <p class="col-sm-8 mx-auto text-sm-center">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
                     </div>
-                    <%= link_to "Track Live", match_path(one_match.id), class: "btn btn-primary btn-lg btn-block mb-0" %></p>
                 </div>
             <% end %>
         </div>

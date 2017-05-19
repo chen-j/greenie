@@ -21,7 +21,11 @@ class MatchesController < ApplicationController
         else
             render "my_matches"
         end
+    end
 
+    def results
+        @match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
+        render "match_results"
     end
 
     def new

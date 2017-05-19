@@ -12,6 +12,7 @@
                 <div class="row btn-group">
                         <%= link_to "Home", root_path, class: "btn btn-success" %>
                         <%= link_to "Track Matches", matches_path, class: "btn btn-success" %>
+                        <%= link_to "Match Results", results_path, class: "btn btn-success" %>
                     <% if scorer_session %>
                         <%= link_to "My Matches", my_matches_path, class: "btn btn-success" %>
                         <%= link_to "New Match", new_match_path, class: "btn btn-success" %>
