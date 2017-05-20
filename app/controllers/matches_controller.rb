@@ -24,13 +24,14 @@ class MatchesController < ApplicationController
     end
 
     def results
-        @match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
+        @competitions = Match.all.collect(&:competition).uniq
+        @competitions.push("")
+        @match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc).filter(params.slice(:competition, :sport))
         render "match_results"
     end
 
     def results_api
-        # match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
-        match_results = Match.filter(params.slice(:status, :competition))
+        match_results = Match.filter(params.slice(:status, :competition, :sport))
         render json: match_results
     end
 
@@ -79,6 +80,6 @@ class MatchesController < ApplicationController
     end
 
     def filtering_params(params)
-        params.slice(:status, :competition)
+        params.slice(:status, :competition, :sport)
     end
 end

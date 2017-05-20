@@ -6,4 +6,5 @@ class Match < ApplicationRecord
 
     scope :competition, -> (competition) { where competition: competition }
     scope :status, -> (status) { where matchStatus: status }
+    scope :sport, -> (sport) { where sport: sport }
 end

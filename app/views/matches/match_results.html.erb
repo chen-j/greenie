@@ -1,5 +1,15 @@
 <%= render "partials/header" %>
 
+<div class="row">
+    <div class="form-group mx-auto">
+            <%= form_tag '', :method => :get, class: "form-inline" do %>
+                <%= select_tag(:sport, options_for_select(['','Basketball','Rugby','Field Hockey','Water Polo','Football'],params[:sport]),{:class =>"form-control mb-2 mr-sm-2 mb-sm-0"}) %>
+                <%= select_tag(:competition, options_for_select(@competitions.reverse, params[:competition]),{:class =>"form-control mb-2 mr-sm-2 mb-sm-0"}) %>
+                <%= submit_tag 'Filter Results', name: nil, class: "btn btn-primary" %>
+            <% end %>
+    </div>
+</div>
+
 <div class="container">
         <div class="row">
             <h3 class="mx-auto mb-3 font-weight-bold">Results</h3>
