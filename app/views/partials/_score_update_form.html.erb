@@ -3,7 +3,7 @@
         <%= form_for @match do |f| %>
                 <div class="form-group row">
                     <div class="col-md-10 offset-md-1">
-                        <div class="text-md-center score_update_label">
+                        <div class="text-center score_update_label">
                             <%= f.label :teamAName, @match.teamAName, class: "col-form-label" %>
                         </div>
                         <div>
@@ -17,14 +17,14 @@
     </div>
 
     <div class="col-md-2">
-        <p class="score_update_versus text-md-center">VS</p>
+        <p class="score_update_versus text-center">VS</p>
     </div>
 
     <div class="col-md-5">
     <%= form_for @match do |f| %>
             <div class="form-group row">
                 <div class="col-md-10 offset-md-1">
-                    <div class="text-md-center score_update_label">
+                    <div class="text-center score_update_label">
                         <%= f.label :teamBName, @match.teamBName, class: "col-form-label" %>
                     </div>
                     <div>

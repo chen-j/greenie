@@ -236,9 +236,15 @@ html {
   font-size: 12px;
 }
 
+@include media-breakpoint-up(xs) {
+  html {
+    font-size: 18px;
+  }
+}
+
 @include media-breakpoint-up(sm) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

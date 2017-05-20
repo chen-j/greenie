@@ -6,7 +6,7 @@
                 <%= form_tag '', :method => :get, class: "form-inline" do %>
                     <%= select_tag(:sport, options_for_select(['','Basketball','Rugby','Field Hockey','Water Polo','Football'],params[:sport]),{:class =>"form-control mb-2 mr-sm-2 mb-sm-0"}) %>
                     <%= select_tag(:competition, options_for_select(@competitions.reverse, params[:competition]),{:class =>"form-control mb-2 mr-sm-2 mb-sm-0"}) %>
-                    <%= submit_tag 'Filter Results', name: nil, class: "btn btn-primary" %>
+                    <%= submit_tag 'Filter Results', name: nil, class: "form-control btn btn-primary" %>
                 <% end %>
         </div>
     </div>
@@ -24,18 +24,18 @@
                         <p class="mx-auto font-italic"><%= one_match.sport %></p>
                     </div>
                     <div class="row">
-                        <p class="col-sm-4 font-weight-bold text-sm-center">
+                        <p class="col-md-4 font-weight-bold text-center">
                             <%= one_match.teamAName %>
                         </p>
-                        <h4 class="col-sm-1 mx-auto font-weight-bold"><%= one_match.teamAScore %></h4>
-                        <p class="col-sm-2 text-sm-center">VS</p>
-                        <h4 class="col-sm-1 mx-auto font-weight-bold"><%= one_match.teamBScore %></h4>
-                        <p class="col-sm-4 font-weight-bold text-sm-center">
+                        <h4 class="col-md-1 mx-auto text-center font-weight-bold"><%= one_match.teamAScore %></h4>
+                        <p class="col-md-2 text-center">VS</p>
+                        <h4 class="col-md-1 mx-auto text-center font-weight-bold"><%= one_match.teamBScore %></h4>
+                        <p class="col-md-4 font-weight-bold text-center">
                              <%= one_match.teamBName %>
                         </p>
                     </div>
                     <div class="row">
-                        <p class="col-sm-8 mx-auto text-sm-center">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                        <p class="col-md-8 mx-auto text-center">@ <%= one_match.venue %> on <%= one_match.matchdate.strftime("%A, %d %b %Y %l:%M %p") %></p>
                     </div>
                 </div>
             <% end %>
