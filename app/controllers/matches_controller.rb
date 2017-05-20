@@ -29,7 +29,8 @@ class MatchesController < ApplicationController
     end
 
     def results_api
-        match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
+        # match_results = Match.where(matchStatus: "COMPLETED").order(matchdate: :desc)
+        match_results = Match.filter(params.slice(:status, :competition))
         render json: match_results
     end
 
@@ -75,5 +76,9 @@ class MatchesController < ApplicationController
 
     def match_params
         params.require(:match).permit(:teamAName, :teamBName, :venue, :teamAScore, :teamBScore, :city, :matchStatus, :matchdate, :sport, :firstRef, :secondRef, :competition)
+    end
+
+    def filtering_params(params)
+        params.slice(:status, :competition)
     end
 end
