@@ -1,10 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.web_socket_server_url = "wss://greeniewp.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://greeniewp.herokuapp.com', 'http://greeniewp.herokuapp.com', 'http://greenie.io', 'http://www.greenie.io']
+  config.action_cable.allowed_request_origins = ['https://greeniewp.herokuapp.com', 'http://greeniewp.herokuapp.com', 'https://greenie.io', 'https://www.greenie.io']
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.action_mailer.default_url_options = { host: 'https://www.greenie.io' }
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
